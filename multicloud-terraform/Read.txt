@@ -1,0 +1,197 @@
+ 1  az login
+    2  yum install azure-cli
+    3  sudo rpm - import https://packages.microsoft.com/keys/microsoft.asc
+    4  sudo rpm -i import https://packages.microsoft.com/keys/microsoft.asc
+    5  sudo rpm -- import https://packages.microsoft.com/keys/microsoft.asc
+    6  sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+    7  sudo sh -c 'echo -e "[azure-cli]
+    8  name=Azure CLI
+    9  baseurl=https://packages.microsoft.com/yumrepos/azure-cli
+   10  enabled=1
+   11  gpgcheck=1
+   12  gpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
+   13  yum install azure-cli
+   14  az login
+   15   mkdir case1-tmc
+   16  cd case1-tmc/
+   17  mkdir modules
+   18  cd modules/
+   19  mkdir aws
+   20  mkdir azure
+   21  cd ..
+   22  ls -ltr
+   23  cd
+   24  yum install terraform
+   25  sudo yum install -y yum-utils
+   26  sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+   27  sudo yum -y install terraform
+   28  ls -ltr
+   29  cd case1-tmc/
+   30  ls -ltr
+   31  cd modules/
+   32  vi providers.tf
+   33  terraform fmt
+   34  terraform init
+   35  terraform validate
+   36  ls- ltr
+   37  ls
+   38  cd aws/
+   39  ls -ltr
+   40  vi aws_instance.tf
+   41  vi variables.tf
+   42  vi outputs.tf
+   43  cd ..
+   44  cd azure
+   45  vi azure_instance.tf
+   46  vi variables.tf
+   47  vi outputs.tf
+   48  ls
+   49  cd ..
+   50  ls
+   51  cd ..
+   52  ls- ltr
+   53  ls -ltr
+   54  pwd
+   55  ls
+   56  vi main.tf
+   57  az group list -otable
+   58  ls- ltr
+   59  ls -ltr
+   60  vi variables.tf
+   61  vi outputs.tf
+   62  cd modules/aws/
+   63  ls -ltr
+   64  vi variables.tf
+   65  cd ..
+   66  ls -ltr
+   67  terraform init
+   68  ls
+   69  ls -ltr
+   70  vi main.tf
+   71  terraform init
+   72  terraform validate
+   73  cd /root/.ssh/
+   74  ls -ltr
+   75  ssh-keygen -t rsa
+   76  ls -ltr
+   77  cd
+   78  ls -ltr
+   79  cd case1-tmc/
+   80  terraform validate
+   81  ls -ltr
+   82  cd modules/azure/
+   83  ls -ltr
+   84  vi azure_instance.tf
+   85  cd ..
+   86  terraform validate
+   87  cd modules/azure/
+   88  ls -ltr
+   89  vi azure_instance.tf
+   90  cd ..
+   91  terraform validate
+   92  terraform apply
+   93  ls
+   94  ls -ltr
+   95  cd modules/
+   96  ls -ltr
+   97  mv providers.tf /root/case1-tmc/
+   98  cd ..
+   99  terraform apply
+  100  ls- ltr
+  101  ls -ltr
+  102  vi providers.tf
+  103  terraform apply
+  104  terraform import /subscriptions/cff83ebe-7e40-4967-af3f-b5850cdc0ecb/resourceGroups/cloud-shell-storage-centralindia
+  105  terraform import azurerm_resource_group.rg /subscriptions/cff83ebe-7e40-4967-af3f-b5850cdc0ecb/resourceGroups/cloud-shell-storage-centralindia
+  106  vi import.tf
+  107  ls -ltr
+  108  terraform import azurerm_resource_group.rg /subscriptions/cff83ebe-7e40-4967-af3f-b5850cdc0ecb/resourceGroups/cloud-shell-storage-centralindia
+  109  terraform apply
+  110  ls -ltr
+  111  mv import.tf /root/
+  112  ls -ltr
+  113  terraform apply
+  114  cd /root/
+  115  ls
+  116  cd case1-tmc/
+  117  ls
+  118  terraform destroy
+  119  pwd
+  120  ls
+  121  cd modules/azure/
+  122  ls
+  123  vi azure_instance.tf
+  124  az group list -otable
+  125  vi azure_instance.tf
+  126  vi variables.tf
+  127  cd ..
+  128  ls
+  129  vi variables.tf
+  130  terraform init
+  131  terraform validate
+  132  az group list -otable
+  133  vi variables.tf
+  134  terraform apply --auto-approve
+  135  terraform apply -auto-approve
+  136  history
+  137  terraform import azurerm_resource_group.rg /subscriptions/cff83ebe-7e40-4967-af3f-b5850cdc0ecb/resourceGroups/centralindiatest
+  138  ls -lrth
+  139  mv /root/import.tf
+  140  mv /root/import.tf .
+  141  ls -lrth
+  142  terraform import azurerm_resource_group.rg /subscriptions/cff83ebe-7e40-4967-af3f-b5850cdc0ecb/resourceGroups/centralindiatest
+  143  vi import.tf
+  144  terraform import azurerm_resource_group.test /subscriptions/cff83ebe-7e40-4967-af3f-b5850cdc0ecb/resourceGroups/centralindiatest
+  145  cd modules/azure/
+  146  ls -lrth
+  147  vi azure_instance.tf
+  148  vi outputs.tf
+  149  vi variables.tf
+  150  cd ..
+  151  mv import.tf /root/
+  152  vi variables.tf
+  153  terraform apply -auto-approve
+  154  terraform state rm /subscriptions/cff83ebe-7e40-4967-af3f-b5850cdc0ecb/resourceGroups/cloud-shell-storage-centralindia
+  155  terraform state rm azurerm_resource_group.rg /subscriptions/cff83ebe-7e40-4967-af3f-b5850cdc0ecb/resourceGroups/cloud-shell-storage-centralindia
+  156  terraform state rm azurerm_resource_group.rg
+  157  cd modules/azure/
+  158  vi azure_instance.tf
+  159  terraform plan
+  160  cd .
+  161  cd ..
+  162  terraform plan
+  163  az group list
+  164  terraform import module.azure[0].azurerm_resource_group.rg /subscriptions/cff83ebe-7e40-4967-af3f-b5850cdc0ecb/resourceGroups/cloud-shell-storage-centralindia
+  165  vi variables.tf
+  166  terraform apply
+  167  vi modules/azure/azure_instance.tf
+  168  terrafrom state list
+  169  terraform state list
+  170  terraform apply
+  171  az account show
+  172  ls
+  173  vi providers.tf
+  174  az provider list
+  175  az provider list --output table
+  176  az provider list --query "[?registrationState=='Registered']" --output table
+  177  az provider list --query "[?namespace=='Microsoft.Compute']" --output table
+  178  terraform apply
+  179  az provider list --query "[?namespace=='Microsoft.Network']" --output table
+  180  Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
+  181* az provider list --query "[?namespace=='Microsoft.Network']" --output table
+  182  terraform apply
+  183  ls
+  184  cd modules/azure/
+  185  ls
+  186  vi variables.tf
+  187  vi azure_instance.tf
+  188  cd ..
+  189  terraform apply
+  190  vi modules/azure/azure_instance.tf
+  191  az vm image list --all --publisher="Canonical"
+  192  az vm image list --all --publisher="Canonical" --sku="18.04-LTS"
+  193  vi modules/azure/azure_instance.tf
+  194  terraform apply
+  195  terraform state list
+  196  vi modules/azure/azure_instance.tf
+  197  terraform destroy
